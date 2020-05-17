@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/12 13:02:05 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 14:16:42 by efumiko          ###   ########.fr       */
+/*   Created: 2020/05/17 11:18:07 by efumiko           #+#    #+#             */
+/*   Updated: 2020/05/17 11:19:05 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int ft_atoi(const char *str)
 {
 	int	nb;
 	int	mark;

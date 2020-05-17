@@ -30,6 +30,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		res[i++] = *s1++;
 	while (*s2)
 		res[i++] = *s2++;
-	res[i] = "\0";
+	res[i] = '\0';
 	return (res);
 }

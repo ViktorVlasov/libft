@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-#include <io.h>
+#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)
 	{
-		_write(fd, s, 1);
+		write(fd, s, 1);
 		s++;
 	}
 }
