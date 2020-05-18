@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:04:36 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 14:54:35 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/18 23:29:34 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
@@ -41,10 +42,12 @@ int		ft_atoi(const char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
+char	*ft_itoa(int n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-char** ft_split(char const* s, char c);
+char	**ft_split(char const *s, char c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
