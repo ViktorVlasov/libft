@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/18 18:27:00 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/20 12:29:50 by efumiko          ###   ########.fr       */
+/*   Created: 2020/05/20 12:25:53 by efumiko           #+#    #+#             */
+/*   Updated: 2020/05/20 13:56:20 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t sz;
+	size_t	i;
+	int		j;
+	size_t	res;
 
-	if (*little == '\0')
-		return ((char *)big);
-	sz = ft_strlen(little);
-	while (*big && sz <= len)
+	if (dstsize <= ft_strlen(dst))
+		return (ft_strlen(src) + dstsize);
+	else
 	{
-		if (ft_strncmp(big, little, sz) == 0)
-			return ((char*)big);
-		++big;
-		--len;
+		res = ft_strlen(dst) + ft_strlen(src);
+		i = ft_strlen(dst);
+		j = 0;
+		while (i < dstsize - 1 && src[j] != '\0')
+		{
+			dst[i] = src[j];
+			i++;
+			j++;
+		}
+		dst[i] = '\0';
 	}
-	return (NULL);
+	return (res);
 }

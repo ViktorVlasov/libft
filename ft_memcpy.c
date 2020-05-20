@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:03:40 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 14:46:18 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/20 13:43:20 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	to = (unsigned char*)dst;
 	from = (unsigned char*)src;
-	if (n != 0)
+	if (dst || src)
 	{
 		while (n--)
 		{
@@ -27,6 +27,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 			++to;
 			++from;
 		}
+		return (dst);
 	}
-	return (dst);
+	return (NULL);
 }
