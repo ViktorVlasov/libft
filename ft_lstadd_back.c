@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 11:18:07 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/20 16:22:45 by efumiko          ###   ########.fr       */
+/*   Created: 2020/05/20 14:21:50 by efumiko           #+#    #+#             */
+/*   Updated: 2020/05/20 16:20:31 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	nb;
-	int	mark;
+	t_list	*lst_back;
 
-	mark = 0;
-	nb = 0;
-	while (*str == ' ' || *str == '\n' || *str == '\r' ||
-		*str == '\v' || *str == '\f' || *str == '\t')
+	if (*lst)
 	{
-		str++;
+		lst_back = *lst;
+		while (lst_back->next)
+			lst_back = lst_back->next;
+		lst_back->next = new;
 	}
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			mark = 1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		nb = 10 * nb + (*str++ - '0');
-	}
-	if (mark == 1)
-	{
-		return (-1 * nb);
-	}
-	return (nb);
+	else
+		*lst = new;
 }
