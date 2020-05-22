@@ -6,21 +6,28 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 14:01:24 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/18 18:43:19 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/22 19:35:44 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <malloc.h>
+#include <stdlib.h>
 
-static char	*strfromchar(char dest[], char c)
+static void	ft_freeres(char **res)
 {
-	dest[0] = c;
-	dest[1] = '\0';
-	return (dest);
+	int i;
+
+	i = 0;
+	while (res[i])
+	{
+		free(res[i]);
+		res[i] = NULL;
+		i++;
+	}
+	free(res);
 }
 
-static int	get_count_strings(char *str, char c)
+static int	get_count_strings(const char *str, char c)
 {
 	int	count_strings;
 	int	i;
@@ -29,11 +36,12 @@ static int	get_count_strings(char *str, char c)
 	count_strings = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == c && str[i + 1] != c)
+		if (str[i] == c && i > 0 && str[i - 1] != c)
 			++count_strings;
 		++i;
 	}
-	count_strings += 1;
+	if (i > 0 && !str[i] && str[i - 1] != c)
+		count_strings += 1;
 	return (count_strings);
 }
 
@@ -44,7 +52,6 @@ static char	**alloc_memarr(char **result, char *strclear, char c)
 	int	num_str;
 
 	i = 0;
-	count_symb = 0;
 	num_str = 0;
 	while (strclear[i] != '\0')
 	{
@@ -56,7 +63,11 @@ static char	**alloc_memarr(char **result, char *strclear, char c)
 		}
 		while (strclear[i] == c)
 			i++;
-		result[num_str] = (char*)malloc((count_symb + 1) * sizeof(char));
+		if (!(result[num_str] = (char*)malloc((count_symb + 1) * sizeof(char))))
+		{
+			ft_freeres(result);
+			return (NULL);
+		}
 		num_str++;
 	}
 	return (result);
@@ -87,7 +98,6 @@ static char	**fill_arr(char **result, char *strclear, char c)
 			i++;
 		indx_str = 0;
 	}
-	result[num_str] = NULL;
 	return (result);
 }
 
@@ -98,13 +108,16 @@ char		**ft_split(char const *s, char c)
 	int		count_strings;
 	char	**result;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
-	strclear = ft_strtrim(s, strfromchar(chr, c));
-	count_strings = get_count_strings(strclear, c) + 1;
-	result = (char**)malloc(count_strings * sizeof(char*));
+	chr[0] = c;
+	chr[1] = '\0';
+	strclear = ft_strtrim(s, chr);
+	count_strings = get_count_strings(s, c);
+	result = (char**)malloc((count_strings + 1) * sizeof(char*));
 	if (result == NULL)
 		return (NULL);
+	result[count_strings] = NULL;
 	alloc_memarr(result, strclear, c);
 	fill_arr(result, strclear, c);
 	free(strclear);

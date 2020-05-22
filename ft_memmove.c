@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:03:43 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 14:29:57 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/21 23:00:20 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,22 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char	*to;
 	unsigned char	*from;
 
-	to = (unsigned char*)dst;
-	from = (unsigned char*)src;
-	if (to < from)
-		ft_memcpy(dst, src, len);
-	else
+	if (dst || src)
 	{
-		to += len;
-		from += len;
-		while (len--)
+		to = (unsigned char*)dst;
+		from = (unsigned char*)src;
+		if (to < from)
+			ft_memcpy(dst, src, len);
+		else
 		{
-			*(--to) = *(--from);
+			to += len;
+			from += len;
+			while (len--)
+			{
+				*(--to) = *(--from);
+			}
 		}
+		return (dst);
 	}
-	return (dst);
+	return (NULL);
 }
