@@ -6,11 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:03:59 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 14:31:55 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 14:02:36 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:03:56 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/23 12:10:26 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 14:02:29 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
