@@ -6,14 +6,14 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:04:36 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/24 11:21:38 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:29:11 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 
 # define LIBFT_H
-# include <string.h>
+# include <stdlib.h>
 
 typedef struct	s_list
 {

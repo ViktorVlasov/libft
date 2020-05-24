@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 15:12:27 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/24 10:34:50 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:30:31 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <malloc.h>
 
 t_list	*ft_lstnew(void *content)
 {

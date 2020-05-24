@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 18:48:45 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/23 12:13:48 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:33:13 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "malloc.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -20,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL)
 		return (NULL);
-	res = (char*)malloc((strlen(s) + 1) * sizeof(char));
+	res = (char*)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
 	i = 0;

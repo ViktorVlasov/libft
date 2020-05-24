@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:04:27 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 14:45:45 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:31:49 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <malloc.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:04:10 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 14:35:52 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:31:17 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <malloc.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

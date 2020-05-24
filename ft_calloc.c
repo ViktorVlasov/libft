@@ -6,13 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:02:42 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/23 11:52:12 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:29:51 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
-#include <malloc.h>
 
 void	*ft_calloc(size_t num, size_t size)
 {

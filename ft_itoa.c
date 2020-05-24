@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 19:30:21 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/18 22:51:39 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:30:03 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "malloc.h"
 
 static int	get_len(int n)
 {

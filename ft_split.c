@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 14:01:24 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/24 10:36:31 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:31:06 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static void	free_res(char **res)
 {

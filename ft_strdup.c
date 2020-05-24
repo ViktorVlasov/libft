@@ -6,12 +6,11 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:04:07 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/16 13:56:53 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 11:31:13 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <malloc.h>
 
 char	*ft_strdup(const char *src)
 {
