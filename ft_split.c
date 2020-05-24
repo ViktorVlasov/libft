@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 14:01:24 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/24 10:30:55 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 10:36:31 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	get_count_words(const char *str, char c)
 
 	count_words = 0;
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		while (str[i] == c)
 			i++;

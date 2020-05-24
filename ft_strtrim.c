@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 19:20:31 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/23 12:50:31 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 10:35:52 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	get_start_index(const char *s1, char const *set)
 	return (start);
 }
 
-static char *fill_newstr(char const *s1, size_t len_newstr)
+static char	*fill_newstr(char const *s1, size_t len_newstr)
 {
 	char	*newstr;
 	size_t	index_newstr;

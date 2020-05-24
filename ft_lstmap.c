@@ -6,13 +6,13 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/23 21:58:52 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/23 22:27:00 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 10:33:58 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *head;
 	t_list *node;
