@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 15:36:31 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/21 23:14:29 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/23 12:31:40 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst->content);
-	free(lst);
-	lst = NULL;
+	if (lst)
+	{
+		(*del)(lst->content);
+		free(lst);
+		lst = NULL;
+	}
 }

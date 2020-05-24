@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 14:21:50 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/20 16:20:31 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/23 15:53:16 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*lst_back;
 
+	if (!lst || !new)
+		return ;
 	if (*lst)
 	{
 		lst_back = *lst;

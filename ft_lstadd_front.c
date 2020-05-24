@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 14:32:22 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/20 16:20:27 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/23 15:56:29 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst)
+	if (lst && new)
 	{
-		if (new)
-			new->next = *lst;
+		new->next = *lst;
 		*lst = new;
 	}
 }

@@ -6,14 +6,14 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/16 14:01:24 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/22 19:35:44 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/24 10:30:55 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static void	ft_freeres(char **res)
+static void	free_res(char **res)
 {
 	int i;
 
@@ -27,22 +27,25 @@ static void	ft_freeres(char **res)
 	free(res);
 }
 
-static int	get_count_strings(const char *str, char c)
+static int	get_count_words(const char *str, char c)
 {
-	int	count_strings;
-	int	i;
+	int count_words;
+	int i;
 
+	count_words = 0;
 	i = 0;
-	count_strings = 0;
-	while (str[i] != '\0')
+	while(str[i] != '\0')
 	{
-		if (str[i] == c && i > 0 && str[i - 1] != c)
-			++count_strings;
-		++i;
+		while (str[i] == c)
+			i++;
+		if (str[i] != '\0')
+		{
+			count_words++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
 	}
-	if (i > 0 && !str[i] && str[i - 1] != c)
-		count_strings += 1;
-	return (count_strings);
+	return (count_words);
 }
 
 static char	**alloc_memarr(char **result, char *strclear, char c)
@@ -61,11 +64,12 @@ static char	**alloc_memarr(char **result, char *strclear, char c)
 			count_symb++;
 			i++;
 		}
-		while (strclear[i] == c)
+		while (strclear[i] == c && strclear[i] != '\0')
 			i++;
 		if (!(result[num_str] = (char*)malloc((count_symb + 1) * sizeof(char))))
 		{
-			ft_freeres(result);
+			free_res(result);
+			result = NULL;
 			return (NULL);
 		}
 		num_str++;
@@ -90,11 +94,11 @@ static char	**fill_arr(char **result, char *strclear, char c)
 			i++;
 			indx_str++;
 		}
-		while (strclear[i] == c)
+		while (strclear[i] == c && strclear[i] != '\0')
 			i++;
 		result[num_str][indx_str] = '\0';
 		num_str++;
-		if (strclear[i] == c)
+		if (strclear[i] == c && strclear[i] != '\0')
 			i++;
 		indx_str = 0;
 	}
@@ -113,7 +117,7 @@ char		**ft_split(char const *s, char c)
 	chr[0] = c;
 	chr[1] = '\0';
 	strclear = ft_strtrim(s, chr);
-	count_strings = get_count_strings(s, c);
+	count_strings = get_count_words(s, c);
 	result = (char**)malloc((count_strings + 1) * sizeof(char*));
 	if (result == NULL)
 		return (NULL);
@@ -121,5 +125,6 @@ char		**ft_split(char const *s, char c)
 	alloc_memarr(result, strclear, c);
 	fill_arr(result, strclear, c);
 	free(strclear);
+	strclear = NULL;
 	return (result);
 }

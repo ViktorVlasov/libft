@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/20 16:15:43 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/22 19:37:16 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/23 22:28:42 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*tmp;
 
-	if (!*lst || !del)
+	if (!lst || !del)
 	{
 		return ;
 	}
@@ -28,4 +28,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		*lst = tmp->next;
 		free(tmp);
 	}
+	*lst = NULL;
 }

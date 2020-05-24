@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:02:05 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/12 15:06:07 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/23 10:58:57 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if ((c >= 65 && c <= 90) ||
-		(c >= 97 && c <= 122) ||
-		(c >= 48 && c <= 57))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }

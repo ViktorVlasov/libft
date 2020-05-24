@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 18:48:45 by efumiko           #+#    #+#             */
-/*   Updated: 2020/05/18 19:59:34 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/05/23 12:13:48 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*res;
-	int		i;
+	char			*res;
+	unsigned int	i;
 
 	if (s == NULL)
 		return (NULL);
