@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:04:36 by efumiko           #+#    #+#             */
-/*   Updated: 2020/11/28 17:59:14 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/11/28 20:51:21 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ t_list			*ft_lstnew(void *content);
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 				void (*del)(void *));
+char			*ft_strcpy(char *dst, const char *src);
 
 #endif
