@@ -6,7 +6,7 @@
 /*   By: efumiko <efumiko@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 13:04:36 by efumiko           #+#    #+#             */
-/*   Updated: 2020/11/28 20:51:21 by efumiko          ###   ########.fr       */
+/*   Updated: 2020/12/04 20:04:47 by efumiko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_strncmp(const char *str1, const char *str2, size_t n);
+int				ft_strcmp(const char *s1, const char *s2);
 size_t			ft_strlen(const char *s);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
